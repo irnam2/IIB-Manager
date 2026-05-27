@@ -3,12 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IIB Manager - Sauvegarder vos vidéos et fichiers">
-    <meta name="keywords" content="téléchargement, youtube, downloader, video, tiktok">
+    <meta name="description" content="IIB Manager - Logiciel professionnel pour sauvegarder vos vidéos et fichiers en ligne. Interface intuitive, haute performance, compatible Windows avec OpenGL 2.0.">
+    <meta name="keywords" content="IIB Manager, téléchargement vidéo, download manager, youtube downloader, tiktok downloader, sauvegarde fichiers, Windows OpenGL">
     <meta name="author" content="IRNAM MOHAMED">
-    <title>IIBM - IRI Internet Backup Manager</title>
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="language" content="French">
+    <meta name="revisit-after" content="7 days">
+    <meta property="og:title" content="IIB Manager - Téléchargement professionnel">
+    <meta property="og:description" content="Sauvegardez vos vidéos et fichiers en un clic. Interface moderne, haute performance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://irnam2.github.io/IIB-Manager/">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>IIB Manager | Téléchargement Vidéo & Fichiers Professionnel</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/Logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* Main content */
+        main {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #38bdf8;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #38bdf8;
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            color: white;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(5px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.5);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: #38bdf8;
+        }
+
+        /* Download Section */
+        .download-card {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .version-info {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .version-badge, .date-badge {
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            font-size: 1.2rem;
+            padding: 15px 40px;
+            margin: 1rem 0;
+            display: inline-block;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .requirements {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 10px;
+            font-size: 0.95rem;
+        }
+
+        /* Screenshots */
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .screenshot {
+            background: #1e293b;
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .screenshot img {
+            width: 100%;
+            height: auto;
+            background: #334155;
+            min-height: 200px;
+            object-fit: cover;
+        }
+
+        .screenshot p {
+            padding: 1rem;
+        }
+
+        /* FAQ Grid */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: rgba(30, 41, 59, 0.6);
+            padding: 1.5rem;
+            border-radius: 15px;
+        }
+
+        .faq-item h3 {
+            color: #38bdf8;
+            margin-bottom: 0.5rem;
+        }
+
+        /* License & Credits */
+        .license-card, .credits-card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .license-card h3, .license-card h4 {
+            margin-top: 1rem;
+            color: #38bdf8;
+        }
+
+        .license-card ul, .credit-item {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .license-card li {
+            margin: 0.5rem 0;
+        }
+
+        .credit-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 10px;
+        }
+
+        .credit-item a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .disclaimer, .thanks {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            margin-top: 4rem;
+            padding: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-info a, .footer-links a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -40,28 +409,28 @@
                     et vos fichiers (PDF, images, ZIP) en un clic.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#download" class="btn btn-primary">📥 Télécharger</a>
+                    <a href="#download" class="btn btn-primary">📥 Télécharger Maintenant</a>
                 </div>
             </div>
         </section>
 
         <!-- Section Fonctionnalités -->
         <section id="features" class="features">
-            <h2>✨ Fonctionnalités</h2>
+            <h2>✨ Fonctionnalités Premium</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🎥</div>
-                    <h3>Vidéos</h3>
+                    <h3>Vidéos HD/4K</h3>
                     <p>YouTube, TikTok, Dailymotion, Vimeo, Twitch, Facebook, Instagram...</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📄</div>
-                    <h3>Fichiers</h3>
-                    <p>PDF, images, ZIP, EXE, documents, audios...</p>
+                    <h3>Tous Fichiers</h3>
+                    <p>PDF, images, ZIP, EXE, documents, audios, et plus encore</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔄</div>
-                    <h3>Reprise</h3>
+                    <h3>Reprise Intelligente</h3>
                     <p>Téléchargements interrompus repris automatiquement</p>
                 </div>
                 <div class="feature-card">
@@ -87,92 +456,100 @@
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3>ffmpeg inclus</h3>
-                    <p>Merge vidéo/audio automatique</p>
+                    <p>Merge vidéo/audio automatique en haute qualité</p>
                 </div>
             </div>
         </section>
 
         <!-- Section Téléchargement -->
         <section id="download" class="download">
-            <h2>📥 Téléchargement</h2>
+            <h2>📥 Téléchargement Sécurisé</h2>
             <div class="download-card">
                 <div class="version-info">
-                    <span class="version-badge">Version 1.0.0</span>
+                    <span class="version-badge">Version 1.0.0 Stable</span>
                     <span class="date-badge">24/04/2026</span>
                 </div>
                 <p class="download-desc">
-                    Logiciel portable - Aucune installation requise<br>
-                    Compatible Windows 7/8/10/11
+                    <strong>✨ Logiciel portable</strong> - Aucune installation requise<br>
+                    <strong>🔧 Compatible :</strong> Windows 7/8/10/11
                 </p>
+                
+                <!-- Chemin de téléchargement modifié ici -->
                 <div class="download-buttons">
-                    <a href="https://github.com/irnam2/IIB-Manager/releases/download/v1.0-trial/IIB_Manager.exe" class="btn btn-download">
-                        ⬇️ Télécharger IIB_Manager.exe (129 MB)
+                    <a href="download/IIB_Manager_Setup.exe" class="btn btn-download">
+                        ⬇️ Télécharger IIB_Manager_Setup.exe (129 MB)
                     </a>
                 </div>
-                <p class="requirements">
-                    <strong>Prérequis :</strong> Windows uniquement. ffmpeg inclus.
-                </p>
+                
+                <div class="requirements">
+                    <strong>📋 Configuration requise :</strong><br>
+                    • Système : <strong>Windows uniquement</strong> (7, 8, 10, 11)<br>
+                    • Graphique : <strong>OpenGL 2.0 minimum requis</strong><br>
+                    • RAM : 2 Go minimum (4 Go recommandé)<br>
+                    • Espace disque : 500 Mo disponibles<br>
+                    • ffmpeg intégré (inclus dans l'installation)
+                </div>
             </div>
         </section>
 
         <!-- Section Captures d'écran -->
         <section id="screenshots" class="screenshots">
-            <h2>📸 Captures d'écran</h2>
+            <h2>📸 Aperçu de l'Interface</h2>
             <div class="screenshots-grid">
                 <div class="screenshot">
-                    <img src="images/screenshot1.png" alt="Interface principale">
-                    <p>Interface principale</p>
+                    <img src="images/screenshot1.png" alt="Interface principale IIB Manager">
+                    <p>Interface principale moderne</p>
                 </div>
                 <div class="screenshot">
-                    <img src="images/screenshot2.png" alt="Téléchargement vidéo">
-                    <p>Téléchargement vidéo</p>
+                    <img src="images/screenshot2.png" alt="Téléchargement vidéo en cours">
+                    <p>Téléchargement vidéo 4K</p>
                 </div>
                 <div class="screenshot">
-                    <img src="images/screenshot3.png" alt="Téléchargements Fichiers">
-                    <p>Téléchargements fichiers</p>
+                    <img src="images/screenshot3.png" alt="Gestionnaire de fichiers">
+                    <p>Gestionnaire de fichiers intégré</p>
                 </div>
             </div>
         </section>
 
         <!-- Section FAQ -->
         <section id="faq" class="faq">
-            <h2>❓ FAQ</h2>
+            <h2>❓ Foire Aux Questions</h2>
             <div class="faq-grid">
                 <div class="faq-item">
                     <h3>Comment ça marche ?</h3>
-                    <p>Copiez une URL vidéo ou fichier, collez-la dans le logiciel, choisissez la qualité et téléchargez.</p>
+                    <p>Copiez une URL vidéo ou fichier, collez-la dans le logiciel, choisissez la qualité et téléchargez en un clic.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Il y'a une version trial ?</h3>
-                    <p>Oui, de 30 jours. L'abonnement n'est pas cher car c'est juste pour soutenir le projet.</p>
+                    <h3>Y a-t-il une version d'essai ?</h3>
+                    <p>Oui, 30 jours d'essai gratuit. L'abonnement est à prix modique pour soutenir le développement.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Est-ce légal ?</h3>
-                    <p>L'outil est légal. L'utilisateur est responsable de ce qu'il télécharge.</p>
+                    <p>L'outil est parfaitement légal. L'utilisateur est seul responsable du contenu téléchargé.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Pourquoi utiliser IIB Manager ?</h3>
-                    <p>Simple, rapide, sans publicité.</p>
+                    <h3>Pourquoi choisir IIB Manager ?</h3>
+                    <p>Simple, rapide, sans publicité, interface professionnelle et support technique réactif.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Comment signaler un bug ?</h3>
                     <p>Créez une issue sur GitHub ou contactez l'auteur par email.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Quelles sont les alternatives ?</h3>
-                    <p>IDM (payant), 4K Video Downloader (freemium), yt-dlp (CLI).</p>
+                    <h3>OpenGL 2.0 est-il vraiment requis ?</h3>
+                    <p>Oui, pour l'interface graphique accélérée par matériel. La plupart des PC depuis 2009 supportent OpenGL 2.0.</p>
                 </div>
             </div>
         </section>
 
         <!-- Section LICENCE -->
         <section id="license" class="license">
-            <h2>📜 Licence</h2>
+            <h2>📜 Licence et Conditions</h2>
             <div class="license-card">
                 <h3>IIB Manager - Licence propriétaire</h3>
-                <p><strong>Copyright © 2024 IRNAM MOHAMED - Tous droits réservés</strong></p>
+                <p><strong>Copyright © 2024-2026 IRNAM MOHAMED - Tous droits réservés</strong></p>
                 
-                <p>Ce logiciel est la propriété de IRNAM MOHAMED. Il est protégé par le droit d'auteur et les lois internationales sur la propriété intellectuelle.</p>
+                <p>Ce logiciel est la propriété exclusive de IRNAM MOHAMED. Il est protégé par le droit d'auteur et les lois internationales sur la propriété intellectuelle.</p>
                 
                 <h4>✅ Vous avez le droit de :</h4>
                 <ul>
@@ -190,7 +567,7 @@
                 </ul>
                 
                 <p class="disclaimer">
-                    <strong>⚠️ Avertissement :</strong> L'utilisateur est seul responsable de l'utilisation qu'il fait du logiciel.<br>
+                    <strong>⚠️ Avertissement légal :</strong> L'utilisateur est seul responsable de l'utilisation qu'il fait du logiciel.<br>
                     Le téléchargement de vidéos protégées par le droit d'auteur sans autorisation peut être illégal dans votre pays.
                 </p>
             </div>
@@ -198,9 +575,9 @@
 
         <!-- Section CRÉDITS -->
         <section id="credits" class="credits">
-            <h2>🙏 Crédits</h2>
+            <h2>🙏 Crédits Open Source</h2>
             <div class="credits-card">
-                <p>IIB Manager utilise les bibliothèques et outils open-source suivants :</p>
+                <p>IIB Manager utilise avec gratitude les bibliothèques et outils open-source suivants :</p>
                 
                 <div class="credit-item">
                     <strong>🎬 yt-dlp</strong>
@@ -237,7 +614,7 @@
                     <p>Détection de types de fichiers - Sous licence <strong>MIT</strong></p>
                 </div>
                 
-                <p class="thanks">Merci à tous ces projets open-source qui rendent ce logiciel possible !</p>
+                <p class="thanks">🙏 Merci à tous ces projets open-source qui rendent IIB Manager possible !</p>
             </div>
         </section>
     </main>
@@ -245,13 +622,14 @@
     <footer>
         <div class="footer-content">
             <div class="footer-info">
-                <p><strong>IIB Manager</strong> - Sauveur universel</p>
-                <p>© 2024 IRNAM MOHAMED - Tous droits réservés</p>
+                <p><strong>IIB Manager</strong> - Sauveur universel de vidéos et fichiers</p>
+                <p>© 2024-2026 IRNAM MOHAMED - Tous droits réservés</p>
                 <p>Contact : <a href="mailto:irnammohamed.dev@gmail.com">irnammohamed.dev@gmail.com</a></p>
             </div>
             <div class="footer-links">
                 <a href="#license">Licence propriétaire</a>
                 <a href="#credits">Crédits</a>
+                <a href="#download">Téléchargement</a>
             </div>
         </div>
     </footer>
@@ -267,6 +645,9 @@
                 }
             });
         });
+
+        // Ajout d'un console.log pour le SEO tracking (optionnel)
+        console.log('IIB Manager - Site optimisé SEO et référencement Google');
     </script>
 </body>
 </html>
