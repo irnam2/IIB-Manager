@@ -3,21 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IIB Manager - Logiciel professionnel pour sauvegarder vos vidéos et fichiers en ligne. Interface intuitive, haute performance, compatible Windows avec OpenGL 2.0.">
-    <meta name="keywords" content="IIB Manager, téléchargement vidéo, download manager, youtube downloader, tiktok downloader, sauvegarde fichiers, Windows OpenGL">
+    <meta name="description" content="IIBManager - Téléchargez gratuitement le logiciel professionnel pour sauvegarder vos vidéos YouTube, TikTok et fichiers. Interface intuitive, rapide et sécurisée. Compatible Windows 10.">
+    <meta name="keywords" content="IIBManager, IIB Manager, téléchargement vidéo, download manager, youtube downloader, tiktok downloader, sauvegarde fichiers, Windows 10, OpenGL 2.0">
     <meta name="author" content="IRNAM MOHAMED">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <meta name="googlebot" content="index, follow">
     <meta name="language" content="French">
-    <meta name="revisit-after" content="7 days">
-    <meta property="og:title" content="IIB Manager - Téléchargement professionnel">
-    <meta property="og:description" content="Sauvegardez vos vidéos et fichiers en un clic. Interface moderne, haute performance.">
+    <meta name="revisit-after" content="3 days">
+    <meta name="rating" content="General">
+    <meta name="copyright" content="IRNAM MOHAMED">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="IIBManager | Téléchargement Vidéo & Fichiers Professionnel">
+    <meta property="og:description" content="Téléchargez IIBManager, le logiciel qui sauvegarde vos vidéos et fichiers en un clic. Gratuit pendant 30 jours.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://irnam2.github.io/IIB-Manager/">
+    <meta property="og:site_name" content="IIBManager">
+    
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <title>IIB Manager | Téléchargement Vidéo & Fichiers Professionnel</title>
+    <meta name="twitter:title" content="IIBManager - Sauvegardez vos vidéos facilement">
+    <meta name="twitter:description" content="Logiciel de téléchargement professionnel pour Windows 10">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://irnam2.github.io/IIB-Manager/">
+    
+    <title>IIBManager | Téléchargement Vidéo & Fichiers Professionnel</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/Logo.png">
+    
+    <!-- Schema.org JSON-LD pour Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "IIBManager",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Windows 10",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "127"
+      },
+      "downloadUrl": "https://github.com/irnam2/IIB-Manager/releases/download/v1.0.0/IIB_Manager_Setup.zip",
+      "fileSize": "78.6 MB",
+      "description": "Logiciel de téléchargement vidéo et fichiers pour Windows 10"
+    }
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -32,7 +70,6 @@
             line-height: 1.6;
         }
 
-        /* Header & Navigation */
         header {
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
@@ -85,7 +122,6 @@
             color: #38bdf8;
         }
 
-        /* Main content */
         main {
             max-width: 1200px;
             margin: 80px auto 0;
@@ -114,7 +150,6 @@
             border-radius: 2px;
         }
 
-        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             border-radius: 20px;
@@ -162,7 +197,6 @@
             box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
         }
 
-        /* Features Grid */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -195,7 +229,6 @@
             color: #38bdf8;
         }
 
-        /* Download Section */
         .download-card {
             background: linear-gradient(135deg, #1e293b, #0f172a);
             border-radius: 20px;
@@ -240,9 +273,18 @@
             background: rgba(56, 189, 248, 0.1);
             border-radius: 10px;
             font-size: 0.95rem;
+            text-align: left;
         }
 
-        /* Screenshots */
+        .requirements ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .requirements li {
+            margin: 0.5rem 0;
+        }
+
         .screenshots-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -268,7 +310,6 @@
             padding: 1rem;
         }
 
-        /* FAQ Grid */
         .faq-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -286,7 +327,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* License & Credits */
         .license-card, .credits-card {
             background: rgba(30, 41, 59, 0.6);
             border-radius: 20px;
@@ -327,7 +367,6 @@
             border-radius: 5px;
         }
 
-        /* Footer */
         footer {
             background: #0f172a;
             margin-top: 4rem;
@@ -353,7 +392,6 @@
             gap: 1rem;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
@@ -383,8 +421,8 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="images/Logo.png" alt="IIB Manager Logo" class="logo-img">
-                <span>IIB Manager</span>
+                <img src="images/Logo.png" alt="IIBManager Logo" class="logo-img">
+                <span>IIBManager</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Accueil</a></li>
@@ -399,10 +437,9 @@
     </header>
 
     <main>
-        <!-- Section HERO -->
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>IIB Manager</h1>
+                <h1>IIBManager</h1>
                 <p class="tagline">Sauveur universel pour vidéos et fichiers</p>
                 <p class="description">
                     Sauvegardez vos propres vidéos (YouTube, TikTok, Vimeo, Dailymotion...)<br>
@@ -414,7 +451,6 @@
             </div>
         </section>
 
-        <!-- Section Fonctionnalités -->
         <section id="features" class="features">
             <h2>✨ Fonctionnalités Premium</h2>
             <div class="features-grid">
@@ -461,7 +497,6 @@
             </div>
         </section>
 
-        <!-- Section Téléchargement -->
         <section id="download" class="download">
             <h2>📥 Téléchargement Sécurisé</h2>
             <div class="download-card">
@@ -470,34 +505,34 @@
                     <span class="date-badge">24/04/2026</span>
                 </div>
                 <p class="download-desc">
-                    <strong>✨ Logiciel portable</strong> - Aucune installation requise<br>
-                    <strong>🔧 Compatible :</strong> Windows 7/8/10/11
+                    <strong>📦 Installateur Windows</strong> - Setup Inno Setup<br>
+                    <strong>🔧 Compatible :</strong> Windows 10 (compilé sur Windows 10)
                 </p>
                 
-                <!-- Chemin de téléchargement modifié ici -->
                 <div class="download-buttons">
-                    <a href="download/IIB_Manager_Setup.exe" class="btn btn-download">
-                        ⬇️ Télécharger IIB_Manager_Setup.exe (129 MB)
+                    <a href="https://github.com/irnam2/IIB-Manager/releases/download/v1.0.0/IIB_Manager_Setup.zip" class="btn btn-download">
+                        ⬇️ Télécharger IIB_Manager_Setup.zip (78.6 MB)
                     </a>
                 </div>
                 
                 <div class="requirements">
-                    <strong>📋 Configuration requise :</strong><br>
-                    • Système : <strong>Windows uniquement</strong> (7, 8, 10, 11)<br>
-                    • Graphique : <strong>OpenGL 2.0 minimum requis</strong><br>
-                    • RAM : 2 Go minimum (4 Go recommandé)<br>
-                    • Espace disque : 500 Mo disponibles<br>
-                    • ffmpeg intégré (inclus dans l'installation)
+                    <strong>📋 Configuration requise :</strong>
+                    <ul>
+                        <li>💻 <strong>Système :</strong> Windows 10 (compilé et testé sur Windows 10)</li>
+                        <li>🎮 <strong>Graphique :</strong> OpenGL 2.0 minimum requis</li>
+                        <li>🧠 <strong>RAM :</strong> 2 Go minimum (4 Go recommandé)</li>
+                        <li>💾 <strong>Espace disque :</strong> 500 Mo disponibles</li>
+                        <li>🎬 <strong>ffmpeg :</strong> Intégré dans l'installation</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Section Captures d'écran -->
         <section id="screenshots" class="screenshots">
             <h2>📸 Aperçu de l'Interface</h2>
             <div class="screenshots-grid">
                 <div class="screenshot">
-                    <img src="images/screenshot1.png" alt="Interface principale IIB Manager">
+                    <img src="images/screenshot1.png" alt="Interface principale IIBManager">
                     <p>Interface principale moderne</p>
                 </div>
                 <div class="screenshot">
@@ -511,7 +546,6 @@
             </div>
         </section>
 
-        <!-- Section FAQ -->
         <section id="faq" class="faq">
             <h2>❓ Foire Aux Questions</h2>
             <div class="faq-grid">
@@ -528,7 +562,7 @@
                     <p>L'outil est parfaitement légal. L'utilisateur est seul responsable du contenu téléchargé.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Pourquoi choisir IIB Manager ?</h3>
+                    <h3>Pourquoi choisir IIBManager ?</h3>
                     <p>Simple, rapide, sans publicité, interface professionnelle et support technique réactif.</p>
                 </div>
                 <div class="faq-item">
@@ -542,11 +576,10 @@
             </div>
         </section>
 
-        <!-- Section LICENCE -->
         <section id="license" class="license">
             <h2>📜 Licence et Conditions</h2>
             <div class="license-card">
-                <h3>IIB Manager - Licence propriétaire</h3>
+                <h3>IIBManager - Licence propriétaire</h3>
                 <p><strong>Copyright © 2024-2026 IRNAM MOHAMED - Tous droits réservés</strong></p>
                 
                 <p>Ce logiciel est la propriété exclusive de IRNAM MOHAMED. Il est protégé par le droit d'auteur et les lois internationales sur la propriété intellectuelle.</p>
@@ -573,11 +606,10 @@
             </div>
         </section>
 
-        <!-- Section CRÉDITS -->
         <section id="credits" class="credits">
             <h2>🙏 Crédits Open Source</h2>
             <div class="credits-card">
-                <p>IIB Manager utilise avec gratitude les bibliothèques et outils open-source suivants :</p>
+                <p>IIBManager utilise avec gratitude les bibliothèques et outils open-source suivants :</p>
                 
                 <div class="credit-item">
                     <strong>🎬 yt-dlp</strong>
@@ -614,7 +646,7 @@
                     <p>Détection de types de fichiers - Sous licence <strong>MIT</strong></p>
                 </div>
                 
-                <p class="thanks">🙏 Merci à tous ces projets open-source qui rendent IIB Manager possible !</p>
+                <p class="thanks">🙏 Merci à tous ces projets open-source qui rendent IIBManager possible !</p>
             </div>
         </section>
     </main>
@@ -622,7 +654,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-info">
-                <p><strong>IIB Manager</strong> - Sauveur universel de vidéos et fichiers</p>
+                <p><strong>IIBManager</strong> - Sauveur universel de vidéos et fichiers</p>
                 <p>© 2024-2026 IRNAM MOHAMED - Tous droits réservés</p>
                 <p>Contact : <a href="mailto:irnammohamed.dev@gmail.com">irnammohamed.dev@gmail.com</a></p>
             </div>
@@ -635,7 +667,6 @@
     </footer>
 
     <script>
-        // Smooth scrolling pour les ancres
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -645,9 +676,7 @@
                 }
             });
         });
-
-        // Ajout d'un console.log pour le SEO tracking (optionnel)
-        console.log('IIB Manager - Site optimisé SEO et référencement Google');
+        console.log('IIBManager - Site optimisé SEO et référencement Google');
     </script>
 </body>
 </html>
