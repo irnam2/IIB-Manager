@@ -3,12 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IIBManager - Téléchargez gratuitement le logiciel professionnel pour sauvegarder vos vidéos YouTube, TikTok et fichiers. Interface intuitive, rapide et sécurisée.">
-    <meta name="keywords" content="IIBManager, IIB Manager, téléchargement vidéo, download manager, youtube downloader, tiktok downloader, sauvegarde fichiers">
-    <meta name="author" content="IRNAM MOHAMED">
-    <meta name="robots" content="index, follow">
     
-    <title>IIBManager | Téléchargement Vidéo Professionnel</title>
+    <!-- META TAGS POUR GOOGLE -->
+    <meta name="description" content="IIBManager - Téléchargez gratuitement le logiciel professionnel pour sauvegarder vos vidéos YouTube, TikTok, Dailymotion et fichiers. Interface intuitive, rapide et sécurisée. 15 jours d'essai gratuit.">
+    <meta name="keywords" content="IIBManager, IIB Manager, téléchargement vidéo, download manager, youtube downloader, tiktok downloader, sauvegarde fichiers, video downloader, windows downloader">
+    <meta name="author" content="IRNAM MOHAMED">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="googlebot" content="index, follow">
+    <meta name="language" content="French">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- OPEN GRAPH POUR LES RESEAUX SOCIAUX -->
+    <meta property="og:title" content="IIBManager | Téléchargement Vidéo Professionnel">
+    <meta property="og:description" content="Téléchargez gratuitement IIBManager - Sauvegardez vos vidéos YouTube, TikTok et fichiers en un clic. 15 jours d'essai gratuit.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://irnam2.github.io/IIB-Manager/">
+    <meta property="og:site_name" content="IIBManager">
+    
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IIBManager - Téléchargement Vidéo Professionnel">
+    <meta name="twitter:description" content="Logiciel de téléchargement vidéo et fichiers pour Windows - 15 jours d'essai gratuit">
+    
+    <!-- CANONICAL URL -->
+    <link rel="canonical" href="https://irnam2.github.io/IIB-Manager/">
+    
+    <!-- BALISES HREFLANG POUR GOOGLE (multilingue) -->
+    <link rel="alternate" hreflang="fr" href="https://irnam2.github.io/IIB-Manager/">
+    <link rel="alternate" hreflang="en" href="https://irnam2.github.io/IIB-Manager/?lang=en">
+    <link rel="alternate" hreflang="ar" href="https://irnam2.github.io/IIB-Manager/?lang=ar">
+    <link rel="alternate" hreflang="x-default" href="https://irnam2.github.io/IIB-Manager/">
+    
+    <title>IIBManager | Téléchargement Vidéo Professionnel Gratuit</title>
     <link rel="icon" type="image/png" href="images/Logo.png">
     
     <style>
@@ -79,7 +105,6 @@
             color: #38bdf8;
         }
 
-        /* Boutons de langue - BIEN VISIBLES */
         .lang-selector {
             display: flex;
             gap: 0.5rem;
@@ -331,7 +356,7 @@
             text-decoration: none;
         }
 
-        .disclaimer, .thanks {
+        .disclaimer {
             margin-top: 1rem;
             padding: 1rem;
             background: rgba(239, 68, 68, 0.1);
@@ -391,7 +416,6 @@
             }
         }
 
-        /* Style pour l'arabe */
         body[dir="rtl"] .nav-links {
             padding-right: 0;
         }
@@ -507,11 +531,11 @@
             <h2 data-key="screenshots-title">📸 Aperçu de l'Interface</h2>
             <div class="screenshots-grid">
                 <div class="screenshot">
-                    <img src="images/screenshot1.png" alt="Interface principale">
+                    <img src="images/screenshot1.png" alt="Interface principale IIBManager">
                     <p data-key="screenshot1">Interface principale moderne</p>
                 </div>
                 <div class="screenshot">
-                    <img src="images/screenshot2.png" alt="Téléchargement vidéo">
+                    <img src="images/screenshot2.png" alt="Téléchargement vidéo 4K">
                     <p data-key="screenshot2">Téléchargement vidéo 4K</p>
                 </div>
                 <div class="screenshot">
@@ -583,7 +607,7 @@
         <section id="credits" class="credits">
             <h2 data-key="credits-title">🙏 Crédits</h2>
             <div class="credits-card">
-                <p data-key="credits-text">IIBManager utilise avec gratitude les bibliothèques et outils open-source suivants :</p>
+                <p data-key="credits-text">IIBManager utilise les bibliothèques et outils open-source suivants :</p>
                 
                 <div class="credit-item">
                     <strong>🎬 yt-dlp</strong>
@@ -605,8 +629,6 @@
                     <strong>📦 PyInstaller</strong>
                     <p>Licence <strong>GPL v2.0</strong> - <a href="https://pyinstaller.org">pyinstaller.org</a></p>
                 </div>
-                
-                <p class="thanks" data-key="thanks">🙏 Merci à tous ces projets open-source !</p>
             </div>
         </section>
     </main>
@@ -641,7 +663,6 @@
             });
         });
 
-        // Traductions complètes
         const translations = {
             fr: {
                 "nav-home": "Accueil", "nav-features": "Fonctionnalités", "nav-download": "Téléchargement",
@@ -683,8 +704,7 @@
                 "forbidden3": "Contourner le système de licence",
                 "forbidden4": "Utiliser le logiciel pour des activités illégales",
                 "disclaimer": "⚠️ Avertissement : L'utilisateur est seul responsable de l'utilisation qu'il fait du logiciel. Le téléchargement de vidéos protégées par le droit d'auteur sans autorisation peut être illégal.",
-                "credits-title": "🙏 Crédits", "credits-text": "IIBManager utilise avec gratitude les bibliothèques et outils open-source suivants :",
-                "thanks": "🙏 Merci à tous ces projets open-source !",
+                "credits-title": "🙏 Crédits", "credits-text": "IIBManager utilise les bibliothèques et outils open-source suivants :",
                 "footer-tagline": "- Sauveur universel de vidéos et fichiers",
                 "footer-license": "Licence", "footer-credits": "Crédits", "footer-download": "Téléchargement"
             },
@@ -728,8 +748,7 @@
                 "forbidden3": "Bypass the license system",
                 "forbidden4": "Use the software for illegal activities",
                 "disclaimer": "⚠️ Warning: The user is solely responsible for their use of the software. Downloading copyrighted videos without permission may be illegal.",
-                "credits-title": "🙏 Credits", "credits-text": "IIBManager gratefully uses the following open-source libraries and tools:",
-                "thanks": "🙏 Thank you to all these open-source projects!",
+                "credits-title": "🙏 Credits", "credits-text": "IIBManager uses the following open-source libraries and tools:",
                 "footer-tagline": "- Universal video and file saver",
                 "footer-license": "License", "footer-credits": "Credits", "footer-download": "Download"
             },
@@ -773,8 +792,7 @@
                 "forbidden3": "تجاوز نظام الترخيص",
                 "forbidden4": "استخدام البرنامج في أنشطة غير قانونية",
                 "disclaimer": "⚠️ تحذير: المستخدم مسؤول وحده عن استخدامه للبرنامج. تحميل الفيديوهات المحمية بحقوق الطبع دون إذن قد يكون غير قانوني.",
-                "credits-title": "🙏 شكر", "credits-text": "IIBManager يستخدم بامتنان المكتبات والأدوات مفتوحة المصدر التالية:",
-                "thanks": "🙏 شكراً لكل هذه المشاريع مفتوحة المصدر!",
+                "credits-title": "🙏 شكر", "credits-text": "IIBManager يستخدم المكتبات والأدوات مفتوحة المصدر التالية:",
                 "footer-tagline": "- منقذ الفيديو والملفات العالمي",
                 "footer-license": "الترخيص", "footer-credits": "شكر", "footer-download": "تحميل"
             }
@@ -796,11 +814,7 @@
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.dataset.key;
                 if (translations[lang] && translations[lang][key]) {
-                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                        element.placeholder = translations[lang][key];
-                    } else {
-                        element.innerHTML = translations[lang][key];
-                    }
+                    element.innerHTML = translations[lang][key];
                 }
             });
             
