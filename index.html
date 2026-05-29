@@ -3,53 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IIBManager - Téléchargez gratuitement le logiciel professionnel pour sauvegarder vos vidéos YouTube, TikTok et fichiers. Interface intuitive, rapide et sécurisée. Compatible Windows 10.">
-    <meta name="keywords" content="IIBManager, IIB Manager, téléchargement vidéo, download manager, youtube downloader, tiktok downloader, sauvegarde fichiers, Windows 10">
+    <meta name="description" content="IIBManager - Téléchargez gratuitement le logiciel professionnel pour sauvegarder vos vidéos YouTube, TikTok et fichiers. Interface intuitive, rapide et sécurisée.">
+    <meta name="keywords" content="IIBManager, IIB Manager, téléchargement vidéo, download manager, youtube downloader, tiktok downloader, sauvegarde fichiers">
     <meta name="author" content="IRNAM MOHAMED">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-    <meta name="googlebot" content="index, follow">
-    <meta name="language" content="French">
-    <meta name="revisit-after" content="3 days">
-    <meta name="rating" content="General">
-    <meta name="copyright" content="IRNAM MOHAMED">
+    <meta name="robots" content="index, follow">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="IIBManager | Téléchargement Vidéo & Fichiers Professionnel">
-    <meta property="og:description" content="Téléchargez IIBManager, le logiciel qui sauvegarde vos vidéos et fichiers en un clic. Gratuit pendant 15 jours.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://irnam2.github.io/IIB-Manager/">
-    <meta property="og:site_name" content="IIBManager">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="IIBManager - Sauvegardez vos vidéos facilement">
-    <meta name="twitter:description" content="Logiciel de téléchargement professionnel pour Windows 10 - 15 jours d'essai gratuit">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://irnam2.github.io/IIB-Manager/">
-    
-    <title>IIBManager | Téléchargement Vidéo & Fichiers Professionnel</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>IIBManager | Téléchargement Vidéo Professionnel</title>
     <link rel="icon" type="image/png" href="images/Logo.png">
-    
-    <!-- Schema.org JSON-LD pour Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "IIBManager",
-      "applicationCategory": "MultimediaApplication",
-      "operatingSystem": "Windows 10",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "EUR"
-      },
-      "downloadUrl": "https://github.com/irnam2/IIB-Manager/releases/download/v1.0.0/IIB_Manager_Setup.zip",
-      "fileSize": "78.6 MB",
-      "description": "Logiciel de téléchargement vidéo et fichiers pour Windows 10 - 15 jours d'essai gratuit"
-    }
-    </script>
     
     <style>
         * {
@@ -111,10 +71,32 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
+            cursor: pointer;
         }
 
         .nav-links a:hover {
             color: #38bdf8;
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            background: rgba(56, 189, 248, 0.2);
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: #38bdf8;
+            color: #0f172a;
         }
 
         main {
@@ -402,213 +384,209 @@
                 <span>IIBManager</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#features">Fonctionnalités</a></li>
-                <li><a href="#download">Téléchargement</a></li>
-                <li><a href="#screenshots">Captures</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#license">Licence</a></li>
-                <li><a href="#credits">Crédits</a></li>
+                <li><a data-key="nav-home">Accueil</a></li>
+                <li><a data-key="nav-features">Fonctionnalités</a></li>
+                <li><a data-key="nav-download">Téléchargement</a></li>
+                <li><a data-key="nav-screenshots">Captures</a></li>
+                <li><a data-key="nav-faq">FAQ</a></li>
+                <li><a data-key="nav-license">Licence</a></li>
+                <li><a data-key="nav-credits">Crédits</a></li>
             </ul>
+            <div class="lang-selector">
+                <button class="lang-btn active" data-lang="fr">FR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ar">عربي</button>
+            </div>
         </nav>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1>IIBManager</h1>
-                <p class="tagline">Sauveur universel pour vidéos et fichiers</p>
-                <p class="description">
+                <p class="tagline" data-key="hero-tagline">Sauveur universel pour vidéos et fichiers</p>
+                <p class="description" data-key="hero-desc">
                     Sauvegardez vos propres vidéos (YouTube, TikTok, Vimeo, Dailymotion...)<br>
                     et vos fichiers (PDF, images, ZIP) en un clic.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#download" class="btn btn-primary">📥 Télécharger Maintenant</a>
+                    <a href="#download" class="btn btn-primary" data-key="hero-btn">📥 Télécharger Maintenant</a>
                 </div>
             </div>
         </section>
 
+        <!-- Features Section -->
         <section id="features" class="features">
-            <h2>✨ Fonctionnalités Premium</h2>
+            <h2 data-key="features-title">✨ Fonctionnalités</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🎥</div>
-                    <h3>Vidéos HD/4K</h3>
-                    <p>YouTube, TikTok, Dailymotion, Vimeo, Twitch, Facebook, Instagram...</p>
+                    <h3 data-key="feature1-title">Vidéos HD/4K</h3>
+                    <p data-key="feature1-desc">YouTube, TikTok, Dailymotion, Vimeo, Twitch, Facebook, Instagram...</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📄</div>
-                    <h3>Tous Fichiers</h3>
-                    <p>PDF, images, ZIP, EXE, documents, audios, et plus encore</p>
+                    <h3 data-key="feature2-title">Tous Fichiers</h3>
+                    <p data-key="feature2-desc">PDF, images, ZIP, EXE, documents, audios, et plus encore</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔄</div>
-                    <h3>Reprise Intelligente</h3>
-                    <p>Téléchargements interrompus repris automatiquement</p>
+                    <h3 data-key="feature3-title">Reprise Intelligente</h3>
+                    <p data-key="feature3-desc">Téléchargements interrompus repris automatiquement</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
-                    <h3>Multilingue</h3>
-                    <p>Français, English, العربية</p>
+                    <h3 data-key="feature4-title">Multilingue</h3>
+                    <p data-key="feature4-desc">Français, English, العربية</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🖥️</div>
-                    <h3>Barre d'état</h3>
-                    <p>Se cache dans la barre des tâches comme IDM</p>
+                    <h3 data-key="feature5-title">Barre d'état</h3>
+                    <p data-key="feature5-desc">Se cache dans la barre des tâches comme IDM</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📋</div>
-                    <h3>Détection automatique</h3>
-                    <p>Capture automatique des URLs du presse-papiers</p>
+                    <h3 data-key="feature6-title">Détection automatique</h3>
+                    <p data-key="feature6-desc">Capture automatique des URLs du presse-papiers</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🍪</div>
-                    <h3>Support cookies</h3>
-                    <p>Pour vos connexions navigateurs</p>
+                    <h3 data-key="feature7-title">Support cookies</h3>
+                    <p data-key="feature7-desc">Pour vos connexions navigateurs</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>ffmpeg inclus</h3>
-                    <p>Merge vidéo/audio automatique en haute qualité</p>
+                    <h3 data-key="feature8-title">ffmpeg inclus</h3>
+                    <p data-key="feature8-desc">Merge vidéo/audio automatique en haute qualité</p>
                 </div>
             </div>
         </section>
 
+        <!-- Download Section -->
         <section id="download" class="download">
-            <h2>📥 Téléchargement Sécurisé</h2>
+            <h2 data-key="download-title">📥 Téléchargement</h2>
             <div class="download-card">
                 <div class="version-info">
                     <span class="version-badge">Version 1.0.0 Stable</span>
                     <span class="date-badge">24/04/2026</span>
                 </div>
-                
                 <div class="download-buttons">
                     <a href="https://github.com/irnam2/IIB-Manager/releases/download/v1.0.0/IIB_Manager_Setup.zip" class="btn btn-download">
-                        ⬇️ Télécharger IIB_Manager_Setup.zip (78.6 MB)
+                        ⬇️ IIB_Manager_Setup.zip (78.6 MB)
                     </a>
                 </div>
             </div>
         </section>
 
+        <!-- Screenshots Section -->
         <section id="screenshots" class="screenshots">
-            <h2>📸 Aperçu de l'Interface</h2>
+            <h2 data-key="screenshots-title">📸 Aperçu de l'Interface</h2>
             <div class="screenshots-grid">
                 <div class="screenshot">
-                    <img src="images/screenshot1.png" alt="Interface principale IIBManager">
-                    <p>Interface principale moderne</p>
+                    <img src="images/screenshot1.png" alt="Interface principale">
+                    <p data-key="screenshot1">Interface principale moderne</p>
                 </div>
                 <div class="screenshot">
-                    <img src="images/screenshot2.png" alt="Téléchargement vidéo en cours">
-                    <p>Téléchargement vidéo 4K</p>
+                    <img src="images/screenshot2.png" alt="Téléchargement vidéo">
+                    <p data-key="screenshot2">Téléchargement vidéo 4K</p>
                 </div>
                 <div class="screenshot">
                     <img src="images/screenshot3.png" alt="Gestionnaire de fichiers">
-                    <p>Gestionnaire de fichiers intégré</p>
+                    <p data-key="screenshot3">Gestionnaire de fichiers intégré</p>
                 </div>
             </div>
         </section>
 
+        <!-- FAQ Section -->
         <section id="faq" class="faq">
-            <h2>❓ Foire Aux Questions</h2>
+            <h2 data-key="faq-title">❓ Foire Aux Questions</h2>
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h3>Comment ça marche ?</h3>
-                    <p>Copiez une URL vidéo ou fichier, collez-la dans le logiciel, choisissez la qualité et téléchargez en un clic.</p>
+                    <h3 data-key="faq1-q">Comment ça marche ?</h3>
+                    <p data-key="faq1-a">Copiez une URL vidéo ou fichier, collez-la dans le logiciel, choisissez la qualité et téléchargez en un clic.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Y a-t-il une version d'essai ?</h3>
-                    <p>Oui, <strong>15 jours d'essai gratuit</strong>. L'abonnement est à prix modique pour soutenir le développement.</p>
+                    <h3 data-key="faq2-q">Y a-t-il une version d'essai ?</h3>
+                    <p data-key="faq2-a">Oui, <strong>15 jours d'essai gratuit</strong>. L'abonnement est à prix modique pour soutenir le développement.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Est-ce légal ?</h3>
-                    <p>L'outil est parfaitement légal. L'utilisateur est seul responsable du contenu téléchargé.</p>
+                    <h3 data-key="faq3-q">Est-ce légal ?</h3>
+                    <p data-key="faq3-a">L'outil est parfaitement légal. L'utilisateur est seul responsable du contenu téléchargé.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Pourquoi choisir IIBManager ?</h3>
-                    <p>Simple, rapide, sans publicité, interface professionnelle et support technique réactif.</p>
+                    <h3 data-key="faq4-q">Pourquoi choisir IIBManager ?</h3>
+                    <p data-key="faq4-a">Simple, rapide, sans publicité, interface professionnelle et support technique réactif.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Comment signaler un bug ?</h3>
-                    <p>Créez une issue sur GitHub ou contactez l'auteur par email.</p>
+                    <h3 data-key="faq5-q">Comment signaler un bug ?</h3>
+                    <p data-key="faq5-a">Créez une issue sur GitHub ou contactez l'auteur par email.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Quelles sont les alternatives ?</h3>
-                    <p>IDM (payant), 4K Video Downloader (freemium), yt-dlp (CLI).</p>
+                    <h3 data-key="faq6-q">Quelles sont les alternatives ?</h3>
+                    <p data-key="faq6-a">IDM (payant), 4K Video Downloader (freemium), yt-dlp (CLI).</p>
                 </div>
             </div>
         </section>
 
+        <!-- License Section -->
         <section id="license" class="license">
-            <h2>📜 Licence et Conditions</h2>
+            <h2 data-key="license-title">📜 Licence</h2>
             <div class="license-card">
-                <h3>IIBManager - Licence propriétaire</h3>
-                <p><strong>Copyright © 2024-2026 IRNAM MOHAMED - Tous droits réservés</strong></p>
+                <h3 data-key="license-name">IIBManager - Licence propriétaire</h3>
+                <p><strong data-key="copyright">Copyright © 2026 IRNAM MOHAMED - Tous droits réservés</strong></p>
+                <p data-key="license-text">Ce logiciel est la propriété exclusive de IRNAM MOHAMED. Il est protégé par le droit d'auteur.</p>
                 
-                <p>Ce logiciel est la propriété exclusive de IRNAM MOHAMED. Il est protégé par le droit d'auteur et les lois internationales sur la propriété intellectuelle.</p>
-                
-                <h4>✅ Vous avez le droit de :</h4>
+                <h4 data-key="license-rights-title">✅ Vous avez le droit de :</h4>
                 <ul>
-                    <li>Utiliser le logiciel sur vos ordinateurs personnels</li>
-                    <li>Faire une copie de sauvegarde du logiciel</li>
-                    <li>Utiliser la version d'essai gratuitement pendant 15 jours</li>
+                    <li data-key="right1">Utiliser le logiciel sur vos ordinateurs personnels</li>
+                    <li data-key="right2">Faire une copie de sauvegarde du logiciel</li>
+                    <li data-key="right3">Utiliser la version d'essai gratuitement pendant 15 jours</li>
                 </ul>
                 
-                <h4>❌ Vous n'avez PAS le droit de :</h4>
+                <h4 data-key="license-forbidden-title">❌ Vous n'avez PAS le droit de :</h4>
                 <ul>
-                    <li>Vendre, redistribuer ou louer le logiciel</li>
-                    <li>Désassembler, décompiler ou modifier le code source</li>
-                    <li>Contourner le système de licence</li>
-                    <li>Utiliser le logiciel pour des activités illégales</li>
+                    <li data-key="forbidden1">Vendre, redistribuer ou louer le logiciel</li>
+                    <li data-key="forbidden2">Désassembler, décompiler ou modifier le code source</li>
+                    <li data-key="forbidden3">Contourner le système de licence</li>
+                    <li data-key="forbidden4">Utiliser le logiciel pour des activités illégales</li>
                 </ul>
                 
-                <p class="disclaimer">
-                    <strong>⚠️ Avertissement légal :</strong> L'utilisateur est seul responsable de l'utilisation qu'il fait du logiciel.<br>
-                    Le téléchargement de vidéos protégées par le droit d'auteur sans autorisation peut être illégal dans votre pays.
+                <p class="disclaimer" data-key="disclaimer">
+                    <strong>⚠️ Avertissement :</strong> L'utilisateur est seul responsable de l'utilisation qu'il fait du logiciel.<br>
+                    Le téléchargement de vidéos protégées par le droit d'auteur sans autorisation peut être illégal.
                 </p>
             </div>
         </section>
 
+        <!-- Credits Section -->
         <section id="credits" class="credits">
-            <h2>🙏 Crédits Open Source</h2>
+            <h2 data-key="credits-title">🙏 Crédits</h2>
             <div class="credits-card">
-                <p>IIBManager utilise avec gratitude les bibliothèques et outils open-source suivants :</p>
+                <p data-key="credits-text">IIBManager utilise avec gratitude les bibliothèques et outils open-source suivants :</p>
                 
                 <div class="credit-item">
                     <strong>🎬 yt-dlp</strong>
-                    <p>Bibliothèque de téléchargement vidéo - Sous licence <strong>Unlicense (Domaine public)</strong><br>
-                    <a href="https://github.com/yt-dlp/yt-dlp">github.com/yt-dlp/yt-dlp</a></p>
+                    <p>Licence <strong>Unlicense</strong> - <a href="https://github.com/yt-dlp/yt-dlp">github.com/yt-dlp/yt-dlp</a></p>
                 </div>
-                
                 <div class="credit-item">
                     <strong>📡 requests</strong>
-                    <p>Bibliothèque HTTP pour Python - Sous licence <strong>Apache License 2.0</strong><br>
-                    <a href="https://github.com/psf/requests">github.com/psf/requests</a></p>
+                    <p>Licence <strong>Apache 2.0</strong> - <a href="https://github.com/psf/requests">github.com/psf/requests</a></p>
                 </div>
-                
                 <div class="credit-item">
                     <strong>🎞️ ffmpeg</strong>
-                    <p>Outils de traitement multimédia - Sous licence <strong>GNU GPL v3.0</strong><br>
-                    <a href="https://ffmpeg.org">ffmpeg.org</a></p>
+                    <p>Licence <strong>GNU GPL v3.0</strong> - <a href="https://ffmpeg.org">ffmpeg.org</a></p>
                 </div>
-                
                 <div class="credit-item">
                     <strong>📱 Kivy</strong>
-                    <p>Framework interface graphique - Sous licence <strong>MIT</strong><br>
-                    <a href="https://kivy.org">kivy.org</a></p>
+                    <p>Licence <strong>MIT</strong> - <a href="https://kivy.org">kivy.org</a></p>
                 </div>
-                
                 <div class="credit-item">
                     <strong>📦 PyInstaller</strong>
-                    <p>Compilation de l'exécutable - Sous licence <strong>GPL v2.0</strong><br>
-                    <a href="https://pyinstaller.org">pyinstaller.org</a></p>
+                    <p>Licence <strong>GPL v2.0</strong> - <a href="https://pyinstaller.org">pyinstaller.org</a></p>
                 </div>
                 
-                <div class="credit-item">
-                    <strong>🖼️ PureMagic</strong>
-                    <p>Détection de types de fichiers - Sous licence <strong>MIT</strong></p>
-                </div>
-                
-                <p class="thanks">🙏 Merci à tous ces projets open-source qui rendent IIBManager possible !</p>
+                <p class="thanks" data-key="thanks">🙏 Merci à tous ces projets open-source !</p>
             </div>
         </section>
     </main>
@@ -616,29 +594,227 @@
     <footer>
         <div class="footer-content">
             <div class="footer-info">
-                <p><strong>IIBManager</strong> - Sauveur universel de vidéos et fichiers</p>
-                <p>© 2024-2026 IRNAM MOHAMED - Tous droits réservés</p>
+                <p><strong>IIBManager</strong> <span data-key="footer-tagline">- Sauveur universel de vidéos et fichiers</span></p>
+                <p>© 2026 IRNAM MOHAMED</p>
                 <p>Contact : <a href="mailto:irnammohamed.dev@gmail.com">irnammohamed.dev@gmail.com</a></p>
             </div>
             <div class="footer-links">
-                <a href="#license">Licence propriétaire</a>
-                <a href="#credits">Crédits</a>
-                <a href="#download">Téléchargement</a>
+                <a href="#license" data-key="footer-license">Licence</a>
+                <a href="#credits" data-key="footer-credits">Crédits</a>
+                <a href="#download" data-key="footer-download">Téléchargement</a>
             </div>
         </div>
     </footer>
 
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // Smooth scrolling
+        document.querySelectorAll('.nav-links a, .hero-buttons a, .footer-links a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
             });
         });
-        console.log('IIBManager - Site optimisé SEO et référencement Google');
+
+        // Traductions
+        const translations = {
+            fr: {
+                "nav-home": "Accueil", "nav-features": "Fonctionnalités", "nav-download": "Téléchargement",
+                "nav-screenshots": "Captures", "nav-faq": "FAQ", "nav-license": "Licence", "nav-credits": "Crédits",
+                "hero-tagline": "Sauveur universel pour vidéos et fichiers",
+                "hero-desc": "Sauvegardez vos propres vidéos (YouTube, TikTok, Vimeo, Dailymotion...)<br>et vos fichiers (PDF, images, ZIP) en un clic.",
+                "hero-btn": "📥 Télécharger Maintenant",
+                "features-title": "✨ Fonctionnalités",
+                "feature1-title": "Vidéos HD/4K", "feature1-desc": "YouTube, TikTok, Dailymotion, Vimeo, Twitch, Facebook, Instagram...",
+                "feature2-title": "Tous Fichiers", "feature2-desc": "PDF, images, ZIP, EXE, documents, audios, et plus encore",
+                "feature3-title": "Reprise Intelligente", "feature3-desc": "Téléchargements interrompus repris automatiquement",
+                "feature4-title": "Multilingue", "feature4-desc": "Français, English, العربية",
+                "feature5-title": "Barre d'état", "feature5-desc": "Se cache dans la barre des tâches comme IDM",
+                "feature6-title": "Détection automatique", "feature6-desc": "Capture automatique des URLs du presse-papiers",
+                "feature7-title": "Support cookies", "feature7-desc": "Pour vos connexions navigateurs",
+                "feature8-title": "ffmpeg inclus", "feature8-desc": "Merge vidéo/audio automatique en haute qualité",
+                "download-title": "📥 Téléchargement",
+                "screenshots-title": "📸 Aperçu de l'Interface",
+                "screenshot1": "Interface principale moderne",
+                "screenshot2": "Téléchargement vidéo 4K",
+                "screenshot3": "Gestionnaire de fichiers intégré",
+                "faq-title": "❓ Foire Aux Questions",
+                "faq1-q": "Comment ça marche ?", "faq1-a": "Copiez une URL vidéo ou fichier, collez-la dans le logiciel, choisissez la qualité et téléchargez en un clic.",
+                "faq2-q": "Y a-t-il une version d'essai ?", "faq2-a": "Oui, 15 jours d'essai gratuit. L'abonnement est à prix modique pour soutenir le développement.",
+                "faq3-q": "Est-ce légal ?", "faq3-a": "L'outil est parfaitement légal. L'utilisateur est seul responsable du contenu téléchargé.",
+                "faq4-q": "Pourquoi choisir IIBManager ?", "faq4-a": "Simple, rapide, sans publicité, interface professionnelle et support technique réactif.",
+                "faq5-q": "Comment signaler un bug ?", "faq5-a": "Créez une issue sur GitHub ou contactez l'auteur par email.",
+                "faq6-q": "Quelles sont les alternatives ?", "faq6-a": "IDM (payant), 4K Video Downloader (freemium), yt-dlp (CLI).",
+                "license-title": "📜 Licence", "license-name": "IIBManager - Licence propriétaire",
+                "copyright": "Copyright © 2026 IRNAM MOHAMED - Tous droits réservés",
+                "license-text": "Ce logiciel est la propriété exclusive de IRNAM MOHAMED. Il est protégé par le droit d'auteur.",
+                "license-rights-title": "✅ Vous avez le droit de :",
+                "right1": "Utiliser le logiciel sur vos ordinateurs personnels",
+                "right2": "Faire une copie de sauvegarde du logiciel",
+                "right3": "Utiliser la version d'essai gratuitement pendant 15 jours",
+                "license-forbidden-title": "❌ Vous n'avez PAS le droit de :",
+                "forbidden1": "Vendre, redistribuer ou louer le logiciel",
+                "forbidden2": "Désassembler, décompiler ou modifier le code source",
+                "forbidden3": "Contourner le système de licence",
+                "forbidden4": "Utiliser le logiciel pour des activités illégales",
+                "disclaimer": "⚠️ Avertissement : L'utilisateur est seul responsable de l'utilisation qu'il fait du logiciel. Le téléchargement de vidéos protégées par le droit d'auteur sans autorisation peut être illégal.",
+                "credits-title": "🙏 Crédits", "credits-text": "IIBManager utilise avec gratitude les bibliothèques et outils open-source suivants :",
+                "thanks": "🙏 Merci à tous ces projets open-source !",
+                "footer-tagline": "- Sauveur universel de vidéos et fichiers",
+                "footer-license": "Licence", "footer-credits": "Crédits", "footer-download": "Téléchargement"
+            },
+            en: {
+                "nav-home": "Home", "nav-features": "Features", "nav-download": "Download",
+                "nav-screenshots": "Screenshots", "nav-faq": "FAQ", "nav-license": "License", "nav-credits": "Credits",
+                "hero-tagline": "Universal saver for videos and files",
+                "hero-desc": "Save your own videos (YouTube, TikTok, Vimeo, Dailymotion...)<br>and files (PDF, images, ZIP) with one click.",
+                "hero-btn": "📥 Download Now",
+                "features-title": "✨ Features",
+                "feature1-title": "HD/4K Videos", "feature1-desc": "YouTube, TikTok, Dailymotion, Vimeo, Twitch, Facebook, Instagram...",
+                "feature2-title": "All Files", "feature2-desc": "PDF, images, ZIP, EXE, documents, audio, and more",
+                "feature3-title": "Smart Resume", "feature3-desc": "Interrupted downloads resume automatically",
+                "feature4-title": "Multilingual", "feature4-desc": "French, English, العربية",
+                "feature5-title": "System Tray", "feature5-desc": "Hides in taskbar like IDM",
+                "feature6-title": "Auto Detection", "feature6-desc": "Automatically captures URLs from clipboard",
+                "feature7-title": "Cookie Support", "feature7-desc": "For your browser connections",
+                "feature8-title": "ffmpeg included", "feature8-desc": "Auto merge video/audio in high quality",
+                "download-title": "📥 Download",
+                "screenshots-title": "📸 Interface Preview",
+                "screenshot1": "Modern main interface",
+                "screenshot2": "4K video download",
+                "screenshot3": "Integrated file manager",
+                "faq-title": "❓ FAQ",
+                "faq1-q": "How does it work?", "faq1-a": "Copy a video or file URL, paste it into the software, choose quality and download.",
+                "faq2-q": "Is there a trial version?", "faq2-a": "Yes, 15 days free trial. Subscription is affordable to support development.",
+                "faq3-q": "Is it legal?", "faq3-a": "The tool is perfectly legal. The user is solely responsible for downloaded content.",
+                "faq4-q": "Why choose IIBManager?", "faq4-a": "Simple, fast, no ads, professional interface and responsive support.",
+                "faq5-q": "How to report a bug?", "faq5-a": "Create an issue on GitHub or contact the author by email.",
+                "faq6-q": "What are the alternatives?", "faq6-a": "IDM (paid), 4K Video Downloader (freemium), yt-dlp (CLI).",
+                "license-title": "📜 License", "license-name": "IIBManager - Proprietary License",
+                "copyright": "Copyright © 2026 IRNAM MOHAMED - All rights reserved",
+                "license-text": "This software is the exclusive property of IRNAM MOHAMED. It is protected by copyright law.",
+                "license-rights-title": "✅ You have the right to:",
+                "right1": "Use the software on your personal computers",
+                "right2": "Make a backup copy of the software",
+                "right3": "Use the trial version for free for 15 days",
+                "license-forbidden-title": "❌ You do NOT have the right to:",
+                "forbidden1": "Sell, redistribute or rent the software",
+                "forbidden2": "Disassemble, decompile or modify the source code",
+                "forbidden3": "Bypass the license system",
+                "forbidden4": "Use the software for illegal activities",
+                "disclaimer": "⚠️ Warning: The user is solely responsible for their use of the software. Downloading copyrighted videos without permission may be illegal.",
+                "credits-title": "🙏 Credits", "credits-text": "IIBManager gratefully uses the following open-source libraries and tools:",
+                "thanks": "🙏 Thank you to all these open-source projects!",
+                "footer-tagline": "- Universal video and file saver",
+                "footer-license": "License", "footer-credits": "Credits", "footer-download": "Download"
+            },
+            ar: {
+                "nav-home": "الرئيسية", "nav-features": "المميزات", "nav-download": "تحميل",
+                "nav-screenshots": "لقطات", "nav-faq": "أسئلة", "nav-license": "الترخيص", "nav-credits": "شكر",
+                "hero-tagline": "منقذ عالمي للفيديوهات والملفات",
+                "hero-desc": "احفظ فيديوهاتك (يوتيوب، تيك توك، فيميو، ديلي موشن...)<br>وملفاتك (PDF، صور، ZIP) بنقرة واحدة.",
+                "hero-btn": "📥 تحميل الآن",
+                "features-title": "✨ المميزات",
+                "feature1-title": "فيديو HD/4K", "feature1-desc": "يوتيوب، تيك توك، فيميو، ديلي موشن، تويتش، فيسبوك، انستغرام...",
+                "feature2-title": "جميع الملفات", "feature2-desc": "PDF، صور، ZIP، EXE، مستندات، صوتيات، والمزيد",
+                "feature3-title": "استئناف ذكي", "feature3-desc": "استئناف التحميلات المتقطعة تلقائياً",
+                "feature4-title": "متعدد اللغات", "feature4-desc": "Français, English, العربية",
+                "feature5-title": "شريط المهام", "feature5-desc": "يختبئ في شريط المهام مثل IDM",
+                "feature6-title": "كشف تلقائي", "feature6-desc": "يلتقط الروابط تلقائياً من الحافظة",
+                "feature7-title": "دعم الكوكيز", "feature7-desc": "لاتصالات المتصفح",
+                "feature8-title": "ffmpeg مدمج", "feature8-desc": "دمج الفيديو/الصوت تلقائياً بجودة عالية",
+                "download-title": "📥 تحميل",
+                "screenshots-title": "📸 نظرة على الواجهة",
+                "screenshot1": "واجهة رئيسية حديثة",
+                "screenshot2": "تحميل فيديو 4K",
+                "screenshot3": "مدير ملفات مدمج",
+                "faq-title": "❓ أسئلة شائعة",
+                "faq1-q": "كيف يعمل؟", "faq1-a": "انسخ رابط فيديو أو ملف، الصقه في البرنامج، اختر الجودة وحمّل بنقرة واحدة.",
+                "faq2-q": "هل هناك نسخة تجريبية؟", "faq2-a": "نعم، 15 يوماً تجريبياً مجاناً. الاشتراك بسعر رمزي لدعم التطوير.",
+                "faq3-q": "هل هو قانوني؟", "faq3-a": "الأداة قانونية تماماً. المستخدم مسؤول وحده عن المحتوى الذي يحمّله.",
+                "faq4-q": "لماذا تختار IIBManager؟", "faq4-a": "بسيط، سريع، بدون إعلانات، واجهة احترافية ودعم فني سريع.",
+                "faq5-q": "كيف أبلغ عن خلل؟", "faq5-a": "أنشئ مشكلة على GitHub أو اتصل بالمؤلف عبر البريد الإلكتروني.",
+                "faq6-q": "ما هي البدائل؟", "faq6-a": "IDM (مدفوع)، 4K Video Downloader (مختلط)، yt-dlp (سطر أوامر).",
+                "license-title": "📜 الترخيص", "license-name": "IIBManager - ترخيص ملكي",
+                "copyright": "© 2026 إرنام محمد - جميع الحقوق محفوظة",
+                "license-text": "هذا البرنامج ملكية حصرية لإرنام محمد. وهو محمي بقانون حقوق النشر.",
+                "license-rights-title": "✅ لديك الحق في:",
+                "right1": "استخدام البرنامج على أجهزتك الشخصية",
+                "right2": "عمل نسخة احتياطية من البرنامج",
+                "right3": "استخدام النسخة التجريبية مجاناً لمدة 15 يوماً",
+                "license-forbidden-title": "❌ ليس لديك الحق في:",
+                "forbidden1": "بيع أو إعادة توزيع أو تأجير البرنامج",
+                "forbidden2": "تفكيك أو فك ضغط أو تعديل الكود المصدري",
+                "forbidden3": "تجاوز نظام الترخيص",
+                "forbidden4": "استخدام البرنامج في أنشطة غير قانونية",
+                "disclaimer": "⚠️ تحذير: المستخدم مسؤول وحده عن استخدامه للبرنامج. تحميل الفيديوهات المحمية بحقوق الطبع دون إذن قد يكون غير قانوني.",
+                "credits-title": "🙏 شكر", "credits-text": "IIBManager يستخدم بامتنان المكتبات والأدوات مفتوحة المصدر التالية:",
+                "thanks": "🙏 شكراً لكل هذه المشاريع مفتوحة المصدر!",
+                "footer-tagline": "- منقذ الفيديو والملفات العالمي",
+                "footer-license": "الترخيص", "footer-credits": "شكر", "footer-download": "تحميل"
+            }
+        };
+
+        let currentLang = 'fr';
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            
+            // Mettre à jour les boutons actifs
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Mettre à jour tous les éléments avec data-key
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.dataset.key;
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Changer la direction du texte pour l'arabe
+            if (lang === 'ar') {
+                document.body.style.direction = 'rtl';
+                document.querySelectorAll('.features-grid, .faq-grid, .screenshots-grid').forEach(grid => {
+                    grid.style.direction = 'rtl';
+                });
+            } else {
+                document.body.style.direction = 'ltr';
+                document.querySelectorAll('.features-grid, .faq-grid, .screenshots-grid').forEach(grid => {
+                    grid.style.direction = 'ltr';
+                });
+            }
+            
+            localStorage.setItem('iibmanager_lang', lang);
+        }
+
+        // Initialisation
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                switchLanguage(btn.dataset.lang);
+            });
+        });
+        
+        const savedLang = localStorage.getItem('iibmanager_lang');
+        if (savedLang && translations[savedLang]) {
+            switchLanguage(savedLang);
+        } else {
+            switchLanguage('fr');
+        }
     </script>
 </body>
 </html>
