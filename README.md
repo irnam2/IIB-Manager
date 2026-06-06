@@ -4,7 +4,7 @@
 
 ## 📥 Télécharger
 
-[Télécharger IIB_Manager.exe](https://mega.nz/.../IIB_Manager.exe)
+[Télécharger IIB_Manager.exe](https://github.com/irnam2/IIB-Manager/releases/download/v1.0.0/IIB_Manager_Setup.zip)
 
 ## ✨ Fonctionnalités
 
@@ -13,7 +13,3 @@
 - 🔄 Reprise des téléchargements
 - 🌍 Multilingue
 - 🖥️ Barre d'état système
-
-## 💰 Acheter une licence
-
-Le logiciel est payant. Contactez : irnammohamed.dev@email.com
