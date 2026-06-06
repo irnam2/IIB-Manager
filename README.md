@@ -1,6 +1,6 @@
 # IIB Manager - IRI Internet Backup Manager
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)]()
+[![Version](https://raw.githubusercontent.com/irnam2/IIB-Manager/main/version.json)]()
 
 ## 📥 Télécharger
 
